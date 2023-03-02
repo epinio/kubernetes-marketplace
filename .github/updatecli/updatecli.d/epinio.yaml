@@ -45,13 +45,3 @@ targets:
       matchpattern: '--version (\d.\d.\d)'
       replacepattern: '--version {{ source "epinio-chart" }}'
 
-actions:
-  kubernetes-marketplace:
-    kind: "github/pullrequest"
-    scmid: kubernetes-marketplace
-    title: 'Bump Epinio Helm chart to {{ source "epinio-chart" }}'
-    spec:
-      usetitleforautomerge: true
-      # Open pullrequest on parent repository civo/kubernetes-marketplace
-      parent: true
-      mergemethod: squash
